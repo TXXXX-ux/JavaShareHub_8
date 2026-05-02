@@ -8,6 +8,19 @@ spring:
     multipart:
       max-request-size: 30MB
       max-file-size: 25MB
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: "74307960945-r1o59712kr9f4mbnh663hhvulndbn6c0.apps.googleusercontent.com"
+            client-secret: "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"
+            scope: email, profile
+
+  file:
+    upload-dir: uploads/
+
   datasource:
     url: jdbc:h2:./db/JavaShareHub;AUTO_SERVER=TRUE
     username: admin
@@ -17,8 +30,10 @@ spring:
     change-log: classpath:/db/changelog/master.yaml
   mail:
     host: smtp.gmail.com
-    username:
-    password:
+    username: dadep8572@gmail.com
+    password: liidbwmxopuqcclm
+#    liid bwmx opuq cclm
+
     port: 587
     properties:
       mail:
