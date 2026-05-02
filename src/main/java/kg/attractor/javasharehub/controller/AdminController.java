@@ -19,13 +19,12 @@ public class AdminController {
     @GetMapping
     public String adminPanel(Model model) {
         model.addAttribute("users", userService.getAllUsers());
-        // В будущем добавим сюда: model.addAttribute("files", fileService.getAllFiles());
-        return "admin"; // Имя нашего будущего HTML-файла
+        return "admin";
     }
 
     @PostMapping("/user/toggle/{id}")
     public String toggleUser(@PathVariable Long id) {
         userService.toggleUserStatus(id);
-        return "redirect:/admin"; // Возвращаемся обратно в админку
+        return "redirect:/admin";
     }
 }
