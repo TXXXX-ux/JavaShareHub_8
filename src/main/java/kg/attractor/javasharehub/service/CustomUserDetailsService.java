@@ -26,10 +26,10 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
-                user.isEnabled(), // <-- ВОТ ЭТО И ЕСТЬ НАШ БАН! Спринг проверит эту строчку
-                true,             // аккаунт не просрочен
-                true,             // пароль не просрочен
-                true,             // аккаунт не заблокирован по другим причинам
+                user.isEnabled(),
+                true,
+                true,
+                true,
                 Collections.singletonList(new SimpleGrantedAuthority(user.getRole()))
         );
     }
